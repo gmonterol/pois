@@ -4,13 +4,13 @@ Característica: Listar los POIs
 	Como usuario quiero poder listar los POIs dado mi negocio
 	Para saber todos los POIs de ese negocio
 
-Escenario: Listado de POIs vacío
-	Dado el Negocio “Turismo” con 0 POIs
+Escenario: Listado de POIs vacio
+	Dado el Negocio 'Turismo' con 0 POIs
 	Cuando solicito sus POIs
-	Entonces el servicio devuelve una lista vacía
+	Entonces el servicio devuelve una lista vacia
 
 #Escenario: 
-#	Dado Negocio “Turismo” 
+#	Dado Negocio 'Turismo' 
 #	Cuando solicito sus POIs
 #	Entonces el servicio devuelve los POIs
 #	| latitud | longitud | nombre | descripción | categoría |
