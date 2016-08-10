@@ -8,8 +8,6 @@ import javax.xml.bind.annotation.*;
 public class Capa {
 
 	private List<Poi> pois= new ArrayList<Poi>();
-	
-	
 
 	public List<Poi> getPois() {
 		return pois;
