@@ -2,8 +2,11 @@ package pois;
 
 import java.util.List;
 
+import javax.ws.rs.Path;
+
 import org.jboss.resteasy.client.ClientRequest;
 import org.jboss.resteasy.client.ClientResponse;
+import org.jboss.resteasy.util.GenericType;
 import org.junit.Assert;
 
 import cucumber.api.DataTable;
@@ -22,12 +25,13 @@ public class ListarPoisStepDefIT {
 
 	@Cuando("^solicito sus POIs$")
 	public void solicito_sus_POIs() throws Throwable {
-		//ClientRequest request = new ClientRequest("http://localhost:8080/pois/negocio/getPois/turismo");
-	
+		//ClientRequest request = new ClientRequest("http://localhost:8080/pois/negocio/turismo/pois");;
 		ClientRequest request = new ClientRequest("http://localhost:8080/pois/negocio/turismo/pois");
+
 		request.accept("application/json");
 		response = (ClientResponse)request.get();
-		//List<Poi> lista = response.getEntity(new GenericType<List<Poi>>());	
+
+		List<Poi> lista = response.getEntity(new GenericType<List<Poi>>(){});	
 	}
 
 	@Entonces("^el servicio devuelve una lista vacia$")

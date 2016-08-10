@@ -12,10 +12,10 @@ import javax.ws.rs.core.MediaType;
 @Path("/negocio")
 public class ServicioNegocio {
 	
-	//http://localhost:8080/pois/negocio/getPois/turismo
 	@GET
 	@Path("/turismo/pois")
-	@Produces(MediaType.APPLICATION_XML)
+	//@Produces(MediaType.APPLICATION_XML)
+	@Produces("application/json")
 	public List<Poi> getPoisList(){
 		return new ArrayList<Poi>();
 	}
