@@ -5,15 +5,14 @@ Característica: Listar los POIs
 	Para saber todos los POIs de ese negocio
 
 Escenario: Listado de POIs vacio
-	Dado el Negocio 'Turismo' con 0 POIs
+	Dado el Negocio Turismo con 0 POIs
 	Cuando solicito sus POIs
 	Entonces el servicio devuelve una lista vacia
 
-#Escenario: 
-#	Dado Negocio 'Turismo' 
-#	Cuando solicito sus POIs
-#	Entonces el servicio devuelve los POIs
-#	| latitud | longitud | nombre | descripción | categoría |
-#	| 34,4 | 35,5 | nombre | descripción | categoría |
-#	| 34,4 | 35,5 | nombre | descripción | categoría |
-#	| 34,4 | 35,5 | nombre | descripción | categoría |
+Escenario: Listado de 2 POIS 
+	Dado el Negocio Hotel con 2 POIs
+	Cuando solicito los POIs del Hotel
+	Entonces el servicio devuelve
+	| latitud | longitud | nombre | descripción | categoría |
+	| -34.9045366 | -56.1349152 | La Negra Tomasa | Pizzería la Negra Tomasa | Pizzería |
+	| -34.9060305 | -56.1430202 | Pizzería Trouville | Pizzería Trouville | Pizzería |
