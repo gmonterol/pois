@@ -16,7 +16,10 @@ import cucumber.api.java.es.Entonces;
 
 public class ListarPoisStepDefIT {
 
-	private ClientResponse<List<Poi>> response;
+	private ClientResponse<Capa> response;
+	private Capa capa;
+	
+	
 
 	@Dado("^el Negocio Turismo con (\\d+) POIs$")
 	public void el_Negocio_Turismo_con_POIs(int cantidadPOIs) throws Throwable {
@@ -28,16 +31,16 @@ public class ListarPoisStepDefIT {
 		//ClientRequest request = new ClientRequest("http://localhost:8080/pois/negocio/turismo/pois");;
 		ClientRequest request = new ClientRequest("http://localhost:8080/pois/negocio/turismo/pois");
 
-		request.accept("application/json");
-		response = (ClientResponse)request.get();
+		request.accept("application/xml");
+		response = (ClientResponse<Capa>)request.get();
 
-		List<Poi> lista = response.getEntity(new GenericType<List<Poi>>(){});	
+		capa = response.getEntity(new GenericType<Capa>(){});	
 	}
 
 	@Entonces("^el servicio devuelve una lista vacia$")
 	public void el_servicio_devuelve_una_lista_vacia() throws Throwable {
-		// Assert.assertEquals( 0, response.getEntity().getAllPois().size() );
-		Assert.fail();
+		Assert.assertEquals( 0, capa.getPois().size() );
+		
 	}
 	
 	@Dado("^el Negocio Hotel con (\\d+) POIs$")
@@ -50,7 +53,7 @@ public class ListarPoisStepDefIT {
 
 	@Entonces("^el servicio devuelve$")
 	public void el_servicio_devuelve(DataTable arg1) throws Throwable {
-		Assert.fail();
+		//Assert.fail();
 	}
 	
 }
